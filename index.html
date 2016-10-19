@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+<html lang="en-US">
+  
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="lib/ui-bootstrap-tpls-1.1.0.js"></script>
+<script src="smartmirror-core-base.js"></script>
+<script src="smartmirror-core-angular-init.js"></script>
+<script src="smartmirror-core-angular-service-data-weather.js"></script>
+<script src="smartmirror-core-angular-directive-clock.js"></script>
+<script src="smartmirror-core-angular-controller.js"></script>
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  
+<link rel="stylesheet"  href="smartmirror-base.css"/>
+  
+<body ng-app="smartMirror"  ng-controller="smartMirror-kiosk">
+  
+<div class="alert alert-danger" role="alert" ng-show="showErrorMessage">
+  <strong>{{errorMessage}}</strong>
+</div>
+
+
+<div>
+   <h2>Zipcode : <input type="text" ng-model="zipcode"> <button type="button" class="btn btn-primary" ng-Click="getCurrentWeather()" uib-tooltip="Testing">Get Weather</button></h2> 
+</div>
+
+<div ng-show="showCurrentWeatherWidget">
+  <h1>Current weather</h1>
+  <div>
+    <h2>
+      <span class="label label-info">{{currentWeather.locationName}}</span>
+      <span class="label label-info">{{currentWeather.temp}}</span>
+      <span class="label label-info">{{currentWeather.description}}</span>
+    </h2>
+  </div>
+  
+</div>
+
+
+<div smartmirror-widget-clock></div>
+
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-1">.col-md-1</div>
+ 
+</div>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+
+
+</body>
+</html> 
